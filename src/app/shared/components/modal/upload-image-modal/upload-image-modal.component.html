@@ -1,0 +1,43 @@
+<div class="upload-container">
+  <div class="upload-header">
+    <div class="row">
+      <div class="col-6">
+        <label>Upload photo</label>
+      </div>
+      <div class="col-6">
+        <div (click)="hideModal()" class="btn-dissmis">
+          <h5>X</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div appDragDropCustom (files)="filesDropped($event)" class="upload-content">
+    <div class="btn-upload">
+      <label> Drop your image here </label><br />
+      <label>or</label><br />
+      <div class="browse-container">
+        <div class="row">
+          <div class="col-8">
+            <label>Browse</label>
+          </div>
+          <div (click)="browseImage()" class="col-4 lbl-browse">
+            <label>
+              +
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="upload-note">
+    <label>Formats: JPG,JPEG,PNG</label><br />
+    <label>File size: Up to 10MB</label>
+  </div>
+  <div class="btn-cancel">
+    <button (click)="hideModal()" type="button" class="btn btn-secondary">
+      Cancel
+    </button>
+  </div>
+</div>
+<input #upload hidden type="file" (change)="onFileChange($event)" />

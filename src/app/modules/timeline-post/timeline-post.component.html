@@ -1,0 +1,7 @@
+<h3>Timeline post</h3>
+<div *ngFor="let post of lstTimelinePost" class="row">
+  <div *ngFor="let img of post?.lstImgUpload" class="col-2">
+    <img width="100%" height="100%" [src]="img" />
+  </div>
+</div>
+<hr />
