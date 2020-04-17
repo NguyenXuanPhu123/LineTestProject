@@ -19,8 +19,8 @@ import { CoreModule } from "./core/core.module";
     TimelinePostModule,
     PublishDateModule,
     UploadFileModule,
-    SharedModule,
     CoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,35 +1,52 @@
-<div class="row">
-  <div class="col-3">
-    <label>Publish date</label>
-  </div>
-  <div class="col-9">
-    <!--Publish Now option-->
-    <div class="custom-control custom-radio">
-      <input
-        type="radio"
-        class="custom-control-input"
-        id="publishNow"
-        name="defaultExampleRadios"
-        checked
-        mdbInput
-      />
-      <label class="custom-control-label" for="publishNow">Publish now</label>
+<form [formGroup]="form">
+  <div class="row">
+    <div class="col-5">
+      <label class="lbl-publish-date">Publish date</label>
     </div>
-    <!--/Publish Now option-->
+    <div class="col-7">
+      <!--Publish Now option-->
+      <div class="custom-control custom-radio">
+        <input
+          type="radio"
+          class="custom-control-input"
+          id="publishNow"
+          checked
+          mdbInput
+          value="publishNow"
+          formControlName="typeSubmit"
+        />
+        <label class="custom-control-label" for="publishNow">Publish now</label>
+      </div>
+      <!--/Publish Now option-->
 
-    <!--Choose Date Time option-->
-    <div class="custom-control custom-radio">
-      <input
-        type="radio"
-        class="custom-control-input"
-        id="dateTime"
-        name="defaultExampleRadios"
-        mdbInput
-      />
-      <label class="custom-control-label" for="dateTime">
-        <app-date-picker></app-date-picker
-      ></label>
+      <!--Choose Date Time option-->
+      <div class="custom-control custom-radio">
+        <input
+          type="radio"
+          class="custom-control-input"
+          id="dateTime"
+          mdbInput
+          value="dateTime"
+          formControlName="typeSubmit"
+        />
+        <label class="custom-control-label date-picker" for="dateTime">
+          <div class="row">
+            <div class="col-6">
+              <app-date-picker
+                (emitDate)="getDate($event)"
+                [isDisable]="isDisableDateTime"
+              ></app-date-picker>
+            </div>
+            <div class="col-6">
+              <app-time-picker
+                (emitTime)="getTime($event)"
+                [isDisable]="isDisableDateTime"
+              ></app-time-picker>
+            </div>
+          </div>
+        </label>
+      </div>
+      <!--Choose Date Time option-->
     </div>
-    <!--Choose Date Time option-->
   </div>
-</div>
+</form>

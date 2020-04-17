@@ -1,12 +1,17 @@
+@import "../../../assets/scss/color.scss";
 .upload-container {
     border: 1px solid grey;
     border-radius: 3px;
     width: 80%;
     height: 400px;
+    margin: 0 auto;
 }
-
+.custom-hr {
+    margin: unset !important;
+}
 .upload-header {
     height: 50px;
+    background-color: $header-color;
     // background-color: grey;
 }
 .upload-content {
@@ -20,25 +25,62 @@
     width: fit-content;
     text-align: center;
     margin: 0 auto;
+    margin-top: 35px;
 }
 .upload-note {
     margin: 30px;
     width: fit-content;
 }
-.btn-schedule {
+.btn-schedule-container {
     margin: 0 auto;
     text-align: center;
 }
+.btn-schedule {
+    background-color: $primary-color !important;
+    width: 180px !important;
+}
 .image-upload-container {
+    position: relative;
     width: 100%;
     height: 100%;
 }
 .image-upload {
     position: relative;
+    max-height: 140px;
+    height: 100%;
 }
 .btn-delete-img {
     cursor: pointer;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0;
+    right: 15px;
+    width: 15%;
+    background-color: grey;
+    text-align: center;
+    color: white;
+}
+.image-container {
+    position: absolute;
+    margin: 30px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.add-icon {
+    cursor: pointer;
+    border: 1px solid grey;
+}
+.image-icon-container {
+    width: 80px;
+    height: 80px;
+}
+.image-icon {
+    margin: 0 auto;
+}
+.lbl-upload {
+    color: $primary-color;
+}
+.btn-add {
+    width: 133px;
 }

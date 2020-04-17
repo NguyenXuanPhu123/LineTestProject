@@ -8,8 +8,6 @@ import { catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class TimelinePostService {
-  timelinePost: Array<TimelinePostDetail> = [];
-
   private readonly apiUrl = "api/timelinePosts";
 
   httpOptions = {
@@ -28,14 +26,10 @@ export class TimelinePostService {
       );
   }
 
-  addTimelinePost(
-    timelinePost: TimelinePostDetail
-  ): Observable<TimelinePostDetail> {
+  addPosts(post: TimelinePostDetail): Observable<TimelinePostDetail> {
     return this.http
-      .post<TimelinePostDetail>(this.apiUrl, timelinePost, this.httpOptions)
-      .pipe(
-        catchError(this.handleError<TimelinePostDetail>("addTimelinePost"))
-      );
+      .post<TimelinePostDetail>(this.apiUrl, post, this.httpOptions)
+      .pipe(catchError(this.handleError<TimelinePostDetail>("addPosts")));
   }
 
   private handleError<T>(operation = "operation", result?: T) {

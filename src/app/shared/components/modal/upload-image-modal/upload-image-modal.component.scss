@@ -1,5 +1,5 @@
+@import '../../../../../assets/scss/color.scss';
 .upload-container {
-    border: 1px solid grey;
     border-radius: 3px;
     width: 100%;
     height: 100%;
@@ -9,9 +9,12 @@
     height: 50px;
     // background-color: grey;
 }
+.lbl-upload{
+    margin: 10px 0 0 16px;
+}
 .upload-content {
-    border: 1px solid grey;
-    border-radius: 1px;
+    border: 1px dashed $secondary-color;
+    border-radius: 4px;
     margin: 30px;
     height: 200px;
 }
@@ -20,18 +23,25 @@
     width: fit-content;
     text-align: center;
     margin: 0 auto;
+    margin-top: 43px;
 }
 .upload-note {
     margin: 30px;
     width: fit-content;
 }
-.btn-cancel {
+.btn-cancel-container {
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 15px;
+}
+.btn-cancel{
+    background-color: $secondary-color;
+    width: 180px;
 }
 .btn-dissmis {
     width: fit-content;
     padding-right: 15px;
+    padding-top: 10px;
     float: right;
     cursor: pointer;
 }
@@ -43,4 +53,11 @@
     cursor: pointer;
     border-left: 1px solid grey;
     text-align: center;
+    position: relative;
+}
+.plus-icon {
+    z-index: 99;
+    position: absolute;
+    right: 0;
+    left: 0;
 }

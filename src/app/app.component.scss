@@ -1,0 +1,25 @@
+@import "../assets/scss/color.scss";
+
+body {
+    background: #555;
+}
+
+.app-container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+}
+.content {
+    margin: 0 auto;
+}
+.btn-float-right {
+    float: right;
+    background-color: $primary-color !important;
+    width: 180px;
+}
+
+.btn-sencond {
+    background-color: $secondary-color !important;
+    width: 180px;
+}

@@ -1,0 +1,12 @@
+@import '../../../../assets/scss/color.scss';
+
+::ng-deep.ngb-tp-input {
+    width: 55px !important;
+}
+::ng-deep.btn-link {
+    display: none !important;
+}
+::ng-deep.btn-outline-primary{
+    color: $primary-color !important;
+    border-color: $primary-color !important;
+}

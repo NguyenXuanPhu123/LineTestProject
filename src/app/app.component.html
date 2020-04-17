@@ -1,16 +1,39 @@
 <div class="app-container">
-  <app-timeline-post [lstImgUpload]="lstImgUpload"></app-timeline-post>
-  <div class="activity-btn">
-    <div class="row">
-      <div class="col-6">
-        <button type="button" class="btn btn-secondary">Save draft</button>
+  <app-timeline-post
+    [lstTimeLinePostSubmit]="lstTimeLinePostSubmit"
+  ></app-timeline-post
+  >`
+  <div class="content">
+    <div class="activity-btn">
+      <div class="row">
+        <div class="col-6">
+          <button type="button" class="btn btn-secondary btn-sencond">
+            Save draft
+          </button>
+        </div>
+        <div class="col-6">
+          <button
+            (click)="onSubmit()"
+            type="button"
+            class="btn btn-success btn-float-right"
+          >
+            Schedule
+          </button>
+        </div>
       </div>
-      <div class="col-6">
-        <button type="button" class="btn btn-success">Schedule</button>
-      </div>
+      <hr />
     </div>
-    <hr />
+    <app-publish-date
+      (emitTime)="getTime($event)"
+      (emitDate)="getDate($event)"
+      (isPublishNow)="checkIsPublishNow($event)"
+    ></app-publish-date>
+    <app-upload-file
+      #uploadFileCmpt
+      [timeSubmit]="timeSubmit"
+      [dateSubmit]="dateSubmit"
+      [isPublishNow]="isPublishNow"
+      (listTimelinePostsEmit)="getDataSubmit($event)"
+    ></app-upload-file>
   </div>
-  <app-publish-date></app-publish-date>
-  <app-upload-file (listImgEmit)="getImgSubmit($event)"></app-upload-file>
 </div>

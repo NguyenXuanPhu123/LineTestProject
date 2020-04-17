@@ -1,32 +1,40 @@
 <div class="upload-container">
-  <div class="upload-header">
-    <fa name="image" size="2x"></fa>
-  </div>
-  <hr />
+  <div class="upload-header"></div>
+  <hr class="custom-hr" />
   <div class="upload-content">
     <div
       *ngIf="imageUrlToShow.length === 0"
       (click)="openUploadModal()"
       class="btn-upload"
     >
-      <label> Upload photo </label><br />
-      <fa name="image" size="3x"></fa>
-    </div>
-    <div
-      *ngIf="imageUrlToShow && imageUrlToShow.length > 0"
-      class="row image-upload-container"
-    >
-      <div *ngFor="let img of imageUrlToShow" class="col-2">
-        <img height="100%" width="100%" [src]="img" class="image-upload" />
-        <div (click)="deleteImage(img)" class="btn-delete-img">X</div>
+      <label class="lbl-upload"> Upload photo </label><br />
+      <div class="image-icon-container">
+        <img class="image-icon" width="80%" height="100%" src="../../../assets/img/image.png" alt="img-icon" />
       </div>
+    </div>
+    <div class="image-upload-container">
       <div
-        *ngIf="imageUrlToShow.length < 6"
-        (click)="openUploadModal()"
-        class="col-2"
+        class="row image-container"
+        *ngIf="imageUrlToShow && imageUrlToShow.length > 0"
       >
-        <div class="add-image">
-          <fa name="plus" size="3x"></fa>
+        <div *ngFor="let img of imageUrlToShow" class="col-3">
+          <img height="100%" width="100%" [src]="img" class="image-upload" />
+          <div (click)="deleteImage(img)" class="btn-delete-img">X</div>
+        </div>
+        <div
+          *ngIf="imageUrlToShow.length < 4"
+          (click)="openUploadModal()"
+          class="col-2"
+        >
+          <div class="image-upload btn-add">
+            <img
+              height="100%"
+              width="100%"
+              src="../../../assets/img/plus.png"
+              alt="add-icon"
+              class="add-icon"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -35,7 +43,9 @@
     <label>Formats: JPG,JPEG,PNG</label><br />
     <label>File size: Up to 10MB</label>
   </div>
-  <div class="btn-schedule">
-    <button (click)="submitPost()" type="button" class="btn btn-success">Schedule</button>
+  <div class="btn-schedule-container">
+    <button (click)="submitPost()" type="button" class="btn btn-success btn-schedule">
+      Schedule
+    </button>
   </div>
 </div>

@@ -3,11 +3,12 @@
     <input
       type="text"
       class="form-control"
-      [minDate]="minDate"
-      [maxDate]="maxDate"
+      [disabled]="isDisable"
       #dp="bsDatepicker"
       bsDatepicker
-      [(bsValue)]="myDateValue"
+      [(ngModel)]="myDateValue"
+      (ngModelChange)="changeDate($event)"
+      placeholder="MM / DD / YYYY"
     />
   </div>
 </div>

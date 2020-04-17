@@ -1,7 +1,31 @@
 <h3>Timeline post</h3>
-<div *ngFor="let post of lstTimelinePost" class="row">
+<table
+  *ngIf="lstTimeLinePostSubmit && lstTimeLinePostSubmit.length > 0"
+  class="table"
+>
+  <thead>
+    <th scope="col">Id</th>
+    <th scope="col">List Image</th>
+    <th scope="col">Time</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of lstTimeLinePostSubmit">
+      <th scope="row">{{ post?.id }}</th>
+      <th>
+        <div class="row img-container">
+          <div *ngFor="let img of post?.lstImgUpload" class="col-2">
+            <img width="100%" height="100%" [src]="img" />
+          </div>
+        </div>
+      </th>
+      <th>{{ post?.datePost }}&nbsp;{{ post?.timePost }}</th>
+    </tr>
+  </tbody>
+</table>
+<!-- <div *ngFor="let post of lstTimeLinePostSubmit" class="row">
   <div *ngFor="let img of post?.lstImgUpload" class="col-2">
     <img width="100%" height="100%" [src]="img" />
   </div>
-</div>
+  <div class="date-time-submit">{{ post?.datePost }} {{ post?.timePost }}</div>
+</div> -->
 <hr />

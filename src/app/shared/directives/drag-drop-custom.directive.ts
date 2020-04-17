@@ -18,7 +18,7 @@ export interface FileHandle {
 export class DragDropCustomDirective {
   @Output() files: EventEmitter<FileHandle[]> = new EventEmitter();
 
-  @HostBinding("style.background") private background = "#eee";
+  @HostBinding("style.background") private background = "#fffbf0";
 
   constructor(private sanitizer: DomSanitizer) {}
 
